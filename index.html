@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Dictionary</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <i class="fa-solid fa-book-open"></i>
+                <h1>E-Dictionary</h1>
+            </div>
+            <div class="search-container">
+                <i class="fa-solid fa-search search-icon"></i>
+                <input type="text" id="searchInput" placeholder="Search word meaning...">
+            </div>
+            <button id="themeToggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div id="wordGrid" class="word-grid">
+            <!-- Word cards will be rendered here -->
+        </div>
+        
+        <button id="fabAddWord" class="fab-btn" aria-label="Add Word & Meaning" title="Add Word">
+            <i class="fa-solid fa-plus"></i>
+            <span>Add Word</span>
+        </button>
+    </main>
+
+    <!-- Password Modal -->
+    <div id="passwordModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fa-solid fa-lock"></i> Verification Required</h2>
+                <button class="close-btn" id="closePasswordModal"><i class="fa-solid fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <p>Please enter the password to <span id="passwordActionText">continue</span>.</p>
+                <form id="passwordForm">
+                    <div class="input-group">
+                        <i class="fa-solid fa-key"></i>
+                        <input type="password" id="passwordInput" placeholder="Password" required>
+                    </div>
+                    <div id="passwordError" class="error-msg"></div>
+                    <button type="submit" class="btn primary-btn w-100">Verify</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add/Edit Word Modal -->
+    <div id="wordModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="wordModalTitle"><i class="fa-solid fa-pen-to-square"></i> Add Word & Meaning</h2>
+                <button class="close-btn" id="closeWordModal"><i class="fa-solid fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <form id="wordForm">
+                    <div class="input-group">
+                        <i class="fa-solid fa-heading"></i>
+                        <input type="text" id="wordInput" placeholder="Enter word" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fa-solid fa-book"></i>
+                        <textarea id="meaningInput" placeholder="Enter meaning" required rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="btn primary-btn w-100">Save</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toastContainer" class="toast-container"></div>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
