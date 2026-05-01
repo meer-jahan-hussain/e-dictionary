@@ -426,7 +426,7 @@ body {
     font-size: 1.25rem;
 }
 
-.toast-success i { color: var(--primary-color); }
+.toast-success i { color: var(--primary-color)  ; }
 .toast-error i { color: var(--danger-color); }
 
 @keyframes slideUp {
